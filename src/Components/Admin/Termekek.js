@@ -8,7 +8,6 @@ export default function Termekek() {
     console.log(lista)
     return (
         <>
-            
             <button>Felvisz</button>
             <Table striped bordered hover variant='dark'>
                 <thead>
