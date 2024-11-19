@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { ListGroup } from 'react-bootstrap';
+import Public from './Pages/Public';
 
 function App() {
   return (
@@ -9,11 +10,11 @@ function App() {
         <h1>Autó webáruház</h1>
       </header>
       <main>
-        <ListGroup>
+      <ListGroup>
           <ListGroup.Item>Public</ListGroup.Item>
           <ListGroup.Item>Admin</ListGroup.Item>
         </ListGroup>
-        
+        <Public />
       </main>
     </div>
   );

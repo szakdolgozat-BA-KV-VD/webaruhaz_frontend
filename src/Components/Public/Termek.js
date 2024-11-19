@@ -15,7 +15,7 @@ function Termek(props) {
             <ListGroup.Item>{props.rendszam}</ListGroup.Item>
             <ListGroup.Item>{props.fogyaszt}</ListGroup.Item>
             <ListGroup.Item>{props.szin}</ListGroup.Item>
-            <ListGroup.Item>{props.ar}</ListGroup.Item>
+            <ListGroup.Item>{props.ar} Ft</ListGroup.Item>
         </ListGroup>
       </Card.Body>
     </Card>
