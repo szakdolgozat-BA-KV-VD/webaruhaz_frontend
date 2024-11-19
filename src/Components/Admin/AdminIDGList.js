@@ -5,7 +5,7 @@ export const AdminList =
         marka: "Skoda",
         tipus: "Fabia",
         szin: "Piros",
-        fogyaszt: "benzin",
+        fogyaszt: 6.3,
         ar: 3500000
     },
     {
@@ -13,7 +13,7 @@ export const AdminList =
         marka: "Ford",
         tipus: "Focus",
         szin: "Ezüst",
-        fogyaszt: "benzin",
+        fogyaszt: 5.7,
         ar: 1755000
     },
     {
@@ -21,7 +21,7 @@ export const AdminList =
         marka: "Volkswagen",
         tipus: "Passat Kombi",
         szin: "Fekete",
-        fogyaszt: "dízel",
+        fogyaszt: 4.9,
         ar: 3500000
     },
     {
@@ -29,7 +29,7 @@ export const AdminList =
         marka: "Citroen",
         tipus: "C3",
         szin: "Citromsárga",
-        fogyaszt: "benzin",
+        fogyaszt: 10.2,
         ar: 3500000
     },
     {
@@ -37,7 +37,7 @@ export const AdminList =
         marka: "Opel",
         tipus: "Insignia",
         szin: "Kék",
-        fogyaszt: "dízel",
+        fogyaszt: 3.7,
         ar: 3500000
     },
 ]

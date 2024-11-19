@@ -7,15 +7,20 @@ export default function Termekek() {
     const { lista } = useContext(AdminContext)
     console.log(lista)
     return (
+        <>
+            
+            <button>Felvisz</button>
             <Table striped bordered hover variant='dark'>
                 <thead>
                     <tr>
-                        <th>rendszam</th>
-                        <th>marka</th>
-                        <th>tipus</th>
-                        <th>szin</th>
-                        <th>fogyaszt</th>
-                        <th>ar</th>
+                        <th>Rendszám</th>
+                        <th>Márka</th>
+                        <th>Tipus</th>
+                        <th>Szin</th>
+                        <th>Fogyasztás (l/100km)</th>
+                        <th>Ár</th>
+                        <th>Módosít</th>
+                        <th>Eltávolít</th>
                     </tr>
                 </thead>
                 {
@@ -25,5 +30,7 @@ export default function Termekek() {
                 }
 
             </Table>
+        </>
+
     )
 }

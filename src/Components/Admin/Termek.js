@@ -10,8 +10,8 @@ function Termek(props) {
             <td>{props.elem.szin}</td>
             <td>{props.elem.fogyaszt}</td>
             <td>{props.elem.ar}</td>
-            <button>✏️</button>
-            <button>🗑️</button>
+            <td><button>✏️</button></td>
+            <td><button>🗑️</button></td>
 
         </tr>
     </tbody>
