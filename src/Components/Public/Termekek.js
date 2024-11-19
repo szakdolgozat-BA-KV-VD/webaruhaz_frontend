@@ -168,7 +168,7 @@ function Termekek() {
     <div className='row d-flex justify-content-center align-items-center'>
       {autok.map((elem, index) =>{
         return(<Termek key={index} marka={elem.marka} tipus={elem.tipus} rendszam={elem.rendszam} fogyaszt={elem.fogyaszt} szin={elem.szin} ar={elem.ar}/>)
-      })};
+      })}
     </div>
   )
 }
