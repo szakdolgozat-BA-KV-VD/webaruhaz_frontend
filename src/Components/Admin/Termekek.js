@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import Termek from './Termek'
-import { AdminContext } from '../../Contexts/AdminContext'
+import { APIContext } from '../../Contexts/APIContext'
 import { Table } from 'react-bootstrap'
 
 export default function Termekek() {
-    const { lista } = useContext(AdminContext)
+    const { lista } = useContext(APIContext)
     console.log(lista)
     return (
         <>

@@ -1,12 +1,16 @@
-import React, { createContext, useState } from 'react'
-import { AdminList } from '../Components/Admin/AdminIDGList'
+import React, { createContext, useEffect, useState } from 'react'
 import { myAxios } from './MyAxios'
 
-export const AdminContext = createContext("")
+export const APIContext = createContext("")
 
-export const AdminProvider = ({children}) => {
-    const [lista, setLista] = useState(AdminList)
-    console.log(lista)
+export const APIProvider = ({children}) => {
+    const [lista, setLista] = useState([])
+    const [panelBool, setPanelAllapot] = useState(false)
+    const [arValue, setAr] = useState(0)
+    const [markaValue, setKategoria] = useState('');
+    const [tipusValue, setTipus] = useState('');
+    const [szinValue, setSzin] = useState('');
+    const [fogyasztValue, setFogyaszt] = useState(0);
 
     const getAdat = async (vegpont, callback) => {
         try{
@@ -34,7 +38,8 @@ export const AdminProvider = ({children}) => {
     }
 
     useEffect(() => {
-        getAdat("/zsautos", setLista)
+        getAdat("zsautos", setLista)
     }, [])
-    return(<AdminContext.Provider value={{lista}}>{children}</AdminContext.Provider>)
+
+    return(<APIContext.Provider value={{lista}}>{children}</APIContext.Provider>)
 }

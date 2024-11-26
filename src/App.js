@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
 import { ListGroup } from 'react-bootstrap';
-import Admin from './Components/Admin/Admin';
+import Admin from './Pages/Admin';
 import Public from './Pages/Public';
+import { BrowserRoute, Routes, Route, BrowserRouter } from "react-router-dom"
+import NoPage from './Pages/NoPage';
+import Layout from './Pages/Layout';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Autó webáruház</h1>
-      </header>
-      <main>
-      <ListGroup>
-          <ListGroup.Item>Public</ListGroup.Item>
-          <ListGroup.Item>Admin</ListGroup.Item>
-        </ListGroup>
-        <Admin />
-        <Public />
-      </main>
+    <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Public />} />
+              <Route path="admin" element={<Admin />} />
+              <Route path="*" element={<NoPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
     </div>
+
   );
 }
 
