@@ -5,10 +5,10 @@ import { Table } from 'react-bootstrap'
 
 export default function Termekek() {
     const { lista } = useContext(APIContext)
-    console.log(lista)
+    const { panelAllapotValtoztat } = useContext(APIContext)
     return (
         <>
-            <button>Felvisz</button>
+            <button onClick={panelAllapotValtoztat}>Felvisz</button>
             <Table striped bordered hover variant='dark'>
                 <thead>
                     <tr>
