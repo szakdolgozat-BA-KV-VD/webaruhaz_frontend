@@ -14,7 +14,7 @@ function Termek(props) {
             <td>{props.elem.fogyaszt}</td>
             <td>{props.elem.ar}</td>
             <td><button>✏️</button></td>
-            <td><button onClick={termekTorol}>🗑️</button></td>
+            <td><button onClick={() => termekTorol(props.elem.rendszam)}>🗑️</button></td>
         </tr>
     </tbody>
   )

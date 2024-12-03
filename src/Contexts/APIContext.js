@@ -34,11 +34,12 @@ export const APIProvider = ({ children }) => {
             ar: megadottAr
         }
         postAdat('/zsautos/add', ujTermek);
-        getAdat("zsautos", lista)
+        getAdat("zsautos", setLista)
     }
 
-    function termekTorol(){
-        
+    function termekTorol(id){
+        console.log(id)
+        deleteAdat(`/zsautos/destroy/${id}`)
     }
 
 
@@ -67,9 +68,20 @@ export const APIProvider = ({ children }) => {
 
     }
 
+    const deleteAdat = async (vegpont) => {
+        try {
+            const response = await myAxios.delete(vegpont);
+        } catch (err) {
+            console.log("Hiba történt az adat küldésekor!", err)
+        } finally {
+            console.log(":)")
+        }
+
+    }
+
     useEffect(() => {
         getAdat("zsautos", setLista)
     }, [])
 
-    return (<APIContext.Provider value={{ lista, setAr, setMarka, setTipus, setSzin, setFogyaszt, panelAllapotValtoztat,panelBool, termekHozzaad }}>{children}</APIContext.Provider>)
+    return (<APIContext.Provider value={{ lista, setAr, setMarka, setTipus, setSzin, setFogyaszt, panelAllapotValtoztat,panelBool, termekHozzaad, termekTorol }}>{children}</APIContext.Provider>)
 }
