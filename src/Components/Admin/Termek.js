@@ -12,7 +12,6 @@ function Termek(props) {
             <td>{props.elem.ar}</td>
             <td><button>✏️</button></td>
             <td><button>🗑️</button></td>
-
         </tr>
     </tbody>
   )
