@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { KosarContext } from '../../Contexts/KosarContext';
 
 function Termek(props) {
+    const {kosarba} = useContext(KosarContext);
+    function kosarbaHelyez(){
+        kosarba(props)
+    }
+
+
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Body>
@@ -17,6 +24,7 @@ function Termek(props) {
             <ListGroup.Item>{props.szin}</ListGroup.Item>
             <ListGroup.Item>{props.ar} Ft</ListGroup.Item>
         </ListGroup>
+        <button className="btn btn-primary" onClick={() => {kosarbaHelyez()}}>Kosárba</button>
       </Card.Body>
     </Card>
   )
