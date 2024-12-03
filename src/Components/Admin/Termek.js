@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { APIContext } from '../../Contexts/APIContext'
 
 function Termek(props) {
+  let {termekTorol} = useContext(APIContext);
+
   return (
     <tbody>
         <tr>
@@ -11,7 +14,7 @@ function Termek(props) {
             <td>{props.elem.fogyaszt}</td>
             <td>{props.elem.ar}</td>
             <td><button>✏️</button></td>
-            <td><button>🗑️</button></td>
+            <td><button onClick={termekTorol}>🗑️</button></td>
         </tr>
     </tbody>
   )

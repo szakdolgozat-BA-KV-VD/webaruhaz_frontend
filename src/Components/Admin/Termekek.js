@@ -2,13 +2,12 @@ import React, { useContext } from 'react'
 import Termek from './Termek'
 import { APIContext } from '../../Contexts/APIContext'
 import { Table } from 'react-bootstrap'
+import { UrlapPanel } from './UrlapPanel'
 
 export default function Termekek() {
     const { lista } = useContext(APIContext)
-    const { panelAllapotValtoztat } = useContext(APIContext)
     return (
         <>
-            <button onClick={panelAllapotValtoztat}>Felvisz</button>
             <Table striped bordered hover variant='dark'>
                 <thead>
                     <tr>

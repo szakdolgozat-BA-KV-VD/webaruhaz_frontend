@@ -13,18 +13,11 @@ export const APIProvider = ({ children }) => {
     const [fogyasztValue, setFogyaszt] = useState(0);
 
     function panelAllapotValtoztat() {
-        let panelAllapot = [panelBool]
-        if (panelAllapot === false) {
-            panelAllapot = true
-        } else {
-            panelAllapot = false
-        }
-        console.log("Kattintottál rám!")
-        setPanelAllapot(panelAllapot)
+        setPanelAllapot(prevState => !prevState);
+        console.log(panelBool)
     }
 
     function termekHozzaad() {
-        let ujLista = lista
         let megadottMarka = markaValue
         let megadottTipus = tipusValue
         let megadottSzin = szinValue
@@ -40,10 +33,12 @@ export const APIProvider = ({ children }) => {
             fogyaszt: megadottFogyasztas,
             ar: megadottAr
         }
-        
-        ujLista.push(ujTermek)
-        setLista(ujLista)
         postAdat('/zsautos/add', ujTermek);
+        getAdat("zsautos", lista)
+    }
+
+    function termekTorol(){
+        
     }
 
 
@@ -76,5 +71,5 @@ export const APIProvider = ({ children }) => {
         getAdat("zsautos", setLista)
     }, [])
 
-    return (<APIContext.Provider value={{ lista, setAr, setMarka, setTipus, setSzin, setFogyaszt, panelAllapotValtoztat, termekHozzaad }}>{children}</APIContext.Provider>)
+    return (<APIContext.Provider value={{ lista, setAr, setMarka, setTipus, setSzin, setFogyaszt, panelAllapotValtoztat,panelBool, termekHozzaad }}>{children}</APIContext.Provider>)
 }

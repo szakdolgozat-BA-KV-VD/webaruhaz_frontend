@@ -4,14 +4,12 @@ import { UrlapPanel } from '../Components/Admin/UrlapPanel'
 import { APIContext } from '../Contexts/APIContext'
 
 function Admin() {
-    let {panelAllapotValtoztat} = useContext(APIContext)
+  const {panelBool, panelAllapotValtoztat} = useContext(APIContext)
   return (
     <>
       <main>
-        <Termekek/>
-        {
-        panelAllapotValtoztat && <UrlapPanel/>
-        }
+        <button onClick={panelAllapotValtoztat}>Nézetváltás</button>
+        {panelBool ? (<UrlapPanel/>) : (<Termekek/>)}
       </main>
     </>
   )
